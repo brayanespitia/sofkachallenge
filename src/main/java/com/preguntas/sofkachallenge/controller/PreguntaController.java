@@ -42,10 +42,11 @@ public class PreguntaController {
         RespuestaEntity resp = new RespuestaEntity();
         resp.setDescripcion("respuestica");
         resp.setId(1L);
-      //  resp.setPregunta(preguntaEntity);
+      // resp.setPregunta(preguntaEntity);
         resp.setEsCorrecta(true);
         List <RespuestaEntity> respuestas= new ArrayList<>();
         respuestas.add(resp);
+
         preguntaEntity.setRespuestas(respuestas);
 
         preguntaService.crear(preguntaEntity);
