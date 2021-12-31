@@ -39,19 +39,18 @@ public class PreguntaController {
 
     @PostMapping("/registrar")
     public String registrar(@Validated PreguntaEntity preguntaEntity, BindingResult result, Model model, RedirectAttributes flash, @RequestParam(value = "respuesta1")String respuesta1){
-        RespuestaEntity resp = new RespuestaEntity();
-        resp.setDescripcion("respuestica");
-        resp.setId(1L);
+       // RespuestaEntity resp = new RespuestaEntity();
+       // resp.setDescripcion("respuestica");
+       // resp.setId(1L);
       // resp.setPregunta(preguntaEntity);
-        resp.setEsCorrecta(true);
-        List <RespuestaEntity> respuestas= new ArrayList<>();
-        respuestas.add(resp);
+       // resp.setEsCorrecta(true);
 
-        preguntaEntity.setRespuestas(respuestas);
+       // preguntaEntity.addRespuesta(resp);
 
         preguntaService.crear(preguntaEntity);
         flash.addAttribute("sucess","La pregunta a sido registrada");
         return "redirect:/pregunta/registrar";
+
 
     }
 

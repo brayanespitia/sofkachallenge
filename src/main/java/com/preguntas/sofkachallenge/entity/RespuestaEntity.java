@@ -18,7 +18,7 @@ public class RespuestaEntity {
     private boolean esCorrecta;
 
     @ManyToOne
-    @JoinColumn(name = "pregunta_id")
+    @JoinColumn(name = "id_pregunta")
     private PreguntaEntity pregunta;
 
 }

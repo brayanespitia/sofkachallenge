@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -30,6 +31,13 @@ public class PreguntaEntity implements Serializable {
     @OneToMany(mappedBy = "pregunta", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List <RespuestaEntity>respuestas;
 
+    public PreguntaEntity() {
+        this.respuestas = new ArrayList<RespuestaEntity>();
+    }
 
+    public void addRespuesta(RespuestaEntity respuesta){
+
+         this.respuestas.add(respuesta);
+     }
 
 }
